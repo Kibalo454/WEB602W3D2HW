@@ -1,13 +1,27 @@
+@import 'colors';
 
+//Mixin
+@mixin btn($bg, $color) {
+    background-color: $bg;
+    color: $color;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 7em;
+    height: 2.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5em 2em;
+}
 
 //Global
 * {
-    color: ;
+    color: $olive-dark;
     font-size: 1.2rem;
 }
 
 .container {
-    background-color: ;
+    background-color: $yellow;
     border: 1px solid #000;
     display: flex;
     height: 500px;
@@ -17,36 +31,25 @@
     width: 50%;
 
     .left {
-        background-color: ;
+        background-color: $white;
         height: 100%;
         width: 69%;
         position: relative;
     }
 
     .right {
-        background-color: ;
+        background-color: $olive-mid;
         height: 100%;
         position: relative;
         width: 29%;
 
         .button {
-            background-color: ;
-            color: ;
-            border: 0;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 7em;
-            height: 2.5em;
-            font-size: 1rem;
-            font-weight: bold;
-            padding: 0.5em 2em;
+            @include btn($lime, $olive-dark);
 
-            //this is to center content vertically
             position: absolute;
             top: 100%;
             left: 50%;
             transform: translate(-50%, -120%);
         }
     }
-
 }
